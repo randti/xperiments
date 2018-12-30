@@ -1,4 +1,3 @@
-"""
 import json
 from random import choice
 def gen_person():
@@ -20,4 +19,3 @@ def main():
     with open('persons.json','w') as file:
         json.dump(persons,file,indent=2,ensure_ascii=False)
 main()
-"""
