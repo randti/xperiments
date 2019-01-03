@@ -1,21 +1,57 @@
+"""
+import math
+def get_primes(n):
+  numbers = [None for i in range(n+1)]
+  for i in range(2, int(math.sqrt(n))+1):
+    if numbers[i]==None:
+      for j in range(i*i, n+1, i):
+        numbers[j] = 0
+  return numbers
+l=0
+n,m=map(int,input().split())
+a=(get_primes(m))
+for i in range(len(a)):
+    if i>=n and i<=m and a[i]==None :
+        print(i)
+        l=1
+if l==0:
+    print('Absent')
+"""
 class Primelist:
-    def __init__self(self,siml):
-        self.siml=set()
-    def add(self,x):
-        self.siml.add(2)
-        if x%2==0:
-            return self.siml
-        else:
-            i=3
-            while i*i<=x:
-                if x%i==0:
-                    return self.siml
-                i+=2
-            return self.siml.add(x)
-    def get_simple(self):
-        p=[]
-        if self.siml:
-            current = list(self.siml)
-            p.append(current)
-        return p
-a=
+    __slots__ = ['name']
+    def __init__(self):
+        self.name=set()
+    def create(self,n):
+        import math
+        numbers = [True for i in range(n+1)]
+        for i in range(2, int(math.sqrt(n)) + 1):
+            if numbers[i]:
+                    for j in range(i * i, n+1, i):
+                        numbers[j] = False
+        for i in range(2,n+1):
+            if numbers[i]:
+                self.name.add(i)
+        return self.name
+    def inspect(self,x):
+        a=self.name
+        b=len(a)
+        a.add(x)
+        if len(a)>b:
+            return False
+        return True
+    def get_simple(self,Sorted):
+        if self.name:
+            p=list(self.name)
+            if Sorted:
+                p=sorted(p)
+            return p
+a=Primelist()
+n,m=map(int,input().split())
+a.create(m)
+for i in range(n,m+1):
+    if a.inspect(i):
+        print(i)
+        l=1
+if l==0:
+    print('Absent')
+
