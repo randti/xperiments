@@ -5,4 +5,4 @@ while len(n)!=1:
     n=[int(i) for i in n]
     n=str(sum(n))
     p+=1
-print(n,p)
+print(n,p,input())

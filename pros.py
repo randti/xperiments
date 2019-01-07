@@ -46,12 +46,6 @@ class Primelist:
                 p=sorted(p)
             return p
 a=Primelist()
-n,m=map(int,input().split())
+m=int(input())
 a.create(m)
-for i in range(n,m+1):
-    if a.inspect(i):
-        print(i)
-        l=1
-if l==0:
-    print('Absent')
-
+print(1)
