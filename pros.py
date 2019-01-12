@@ -45,7 +45,8 @@ class Primelist:
             if Sorted:
                 p=sorted(p)
             return p
-a=Primelist()
-m=int(input())
-a.create(m)
-print(1)
+if __name__=='__main__':
+    a=Primelist()
+    m=int(input())
+    a.create(m)
+    print(1)
