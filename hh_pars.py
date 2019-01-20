@@ -9,7 +9,6 @@ def hh_parse(base_url,headers):
     request=session.get(base_url,headers=headers)
     if request.status_code==200:
         soup=bs(request.content,'html.parser')
-        divs=soup.find_all('div',attrs={'data-qa':'vacancy-serp__vacancy'})
         divs = soup.find_all('div', attrs={'data-qa': 'vacancy-serp__vacancy'})
         for div in divs:
             title=div.find('a',attrs={'data-qa':'vacancy-serp__vacancy-title'}).text
